@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>tiny demo</title>
+    <style>
+    #map {
+        width:900px;
+        height:600px;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+    <div id="direction-panel"></div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script src="jquery.tinyMap.js"></script>
+    <script>
+
+
+    $('#map').tinyMap({
+        zoom: 15, // 預設縮放程度
+        center: '台北市政府', // 預設中心點
+        marker: [{
+            addr: ['25.037467', '121.564077'],
+            text: '台北市政府',
+            event: function(e) {
+                window.open('http://www.google.com') // 點擊 marker 會另開視窗到 http://www.google.com
+            }
+        }, {
+            addr: '110台灣台北市信義區逸仙路28號',
+            text: '國立故宮博物院',
+            animation: 'BOUNCE' // 輸入經緯度不會跳，要輸入正確地址
+        }]
+    });
+    </script>
+</body>
+
+</html>
